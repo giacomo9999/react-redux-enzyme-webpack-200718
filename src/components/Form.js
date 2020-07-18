@@ -1,28 +1,27 @@
 import React, { Component } from "react";
 
 class Form extends Component {
-  constructor() {
-    super();
-    this.state = { value: "" };
-    this.handleChange = this.handleChange.bind(this);
-  }
+  state = { value: "" };
 
-  handleChange(e) {
+  handleChange = (e) => {
     const { value } = e.target;
     this.setState(() => {
       return { value };
     });
-  }
+  };
 
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-      </form>
+      <div className="container-outer">
+        <h1>I Am The Outer Container</h1>
+        <form>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+        </form>
+      </div>
     );
   }
 }
